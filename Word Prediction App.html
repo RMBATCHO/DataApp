@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Word Prediction App</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Word Prediction App">
+  <meta name="author" content="Rolande Sonya Mbatchou">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Word Prediction App</h1>
+    <h2></h2>
+    <p>Rolande Sonya Mbatchou<br/>Data Science Capstone - John Hopkins University</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Overview</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>We collected a text document corpus in order to build an algorithm that will best predict the next word, given a sentence. In order to successfully achieve our goal, we made use of Natural Language Processing (NLP) techniques and packages available in R, such as the tm and RWeka packages. </p>
+
+<ol>
+<li>The first challenge for this research was to normalize the unstructured input data. </li>
+<li>The second challenge was to generate summary statistics and perform some additional parsing. </li>
+<li>Finally, we built an algorithm that will best predict the next word, using n-gram models.</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Worldcloud of BiGrams</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/fig/unnamed-chunk-2-1.png" alt="plot of chunk unnamed-chunk-2"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Algorithm Methedology</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>To build our algorithm, we used a back-off strategy and N-grams. N-gram is a contiguous sequence of n items from a given sequence of text. For instance, &quot;one&quot; is a unigram, &quot;one child&quot; is a bigram, and &quot;one child syndrom&quot; is a trigram.</p>
+
+<ul>
+<li>We segmented the user inputed text into n-grams from n=1 to n=4. </li>
+<li>Using a 5-grams frequency table, we looked if the inputed text appeared there:</li>
+</ul>
+
+<ol>
+<li>If yes, we would select the corresponding ngram with the higest frequency and output the following word for that sequence. </li>
+<li>If no, we backoff, using the same methedology, but with a 4-grams frequency table.</li>
+<li>The default word &quot;the&quot;, most frequent used word in our corpus, is used as the last backoff step. </li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>&quot;Word Prediction&quot; Shiny App</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>You can preview and test our Shiny App <a href="https://rmbatcho1.shinyapps.io/shinyapp/">Here.</a>
+For our Shiny App, we built an input text box for users. Users are prompted to give a sentence. Then, they can click submit to check which word is most likely to follow.</p>
+
+<ul>
+<li><p>App Description: The App includes an input text box, along with a submit button for users to enter their word choices. Once the user information are inputed, the system activates the algorithm and outputs the entered text, the predicted word, and a wordcloud visual of inputed text.</p></li>
+<li><p>Notes on Functionalities: The system, automatically, removes punctuation and lower the inputed text.</p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Overview'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Worldcloud of BiGrams'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Algorithm Methedology'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='&quot;Word Prediction&quot; Shiny App'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
