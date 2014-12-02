@@ -2,14 +2,14 @@
 title: "Word Prediction App"
 author: "Rolande Sonya Mbatchou"
 date: "Tuesday, December 02, 2014"
+output: beamer_presentation
+hitheme: tomorrow
 job: Data Science Capstone - John Hopkins University
-output: ioslides_presentation
-framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
-highlighter : highlight.js  # {highlight.js, prettify, highlight}
-hitheme     : tomorrow      # 
-widgets     : []            # {mathjax, quiz, bootstrap}
-mode        : selfcontained # {standalone, draft}
-knit        : slidify::knit2slides
+knit: slidify::knit2slides
+mode: selfcontained
+highlighter: highlight.js
+framework: io2012
+widgets: []
 ---
 
 ## Overview
@@ -25,6 +25,9 @@ We collected a text document corpus in order to build an algorithm that will bes
 ## Worldcloud of BiGrams
 
 
+```
+## Loading required package: RColorBrewer
+```
 
 ![plot of chunk unnamed-chunk-2](assets/fig/unnamed-chunk-2-1.png) 
 

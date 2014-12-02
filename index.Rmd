@@ -2,14 +2,14 @@
 title: "Word Prediction App"
 author: "Rolande Sonya Mbatchou"
 date: "Tuesday, December 02, 2014"
+output: beamer_presentation
+hitheme: tomorrow
 job: Data Science Capstone - John Hopkins University
-output: ioslides_presentation
-framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
-highlighter : highlight.js  # {highlight.js, prettify, highlight}
-hitheme     : tomorrow      # 
-widgets     : []            # {mathjax, quiz, bootstrap}
-mode        : selfcontained # {standalone, draft}
-knit        : slidify::knit2slides
+knit: slidify::knit2slides
+mode: selfcontained
+highlighter: highlight.js
+framework: io2012
+widgets: []
 ---
 
 ## Overview
@@ -61,3 +61,4 @@ For our Shiny App, we built an input text box for users. Users are prompted to g
 - App Description: The App includes an input text box, along with a submit button for users to enter their word choices. Once the user information are inputed, the system activates the algorithm and outputs the entered text, the predicted word, and a wordcloud visual of inputed text.
 
 - Notes on Functionalities: The system, automatically, removes punctuation and lower the inputed text.
+
