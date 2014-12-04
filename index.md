@@ -29,7 +29,7 @@ We collected a text document corpus in order to build an algorithm that will bes
 ## Loading required package: RColorBrewer
 ```
 
-![plot of chunk unnamed-chunk-2](assets/fig/unnamed-chunk-2-1.png) 
+![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2-1.png) 
 
 --- 
 
@@ -54,3 +54,4 @@ For our Shiny App, we built an input text box for users. Users are prompted to g
 - App Description: The App includes an input text box, along with a submit button for users to enter their word choices. Once the user information are inputed, the system activates the algorithm and outputs the entered text, the predicted word, and a wordcloud visual of inputed text.
 
 - Notes on Functionalities: The system, automatically, removes punctuation and lower the inputed text.
+
